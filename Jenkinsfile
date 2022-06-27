@@ -11,10 +11,10 @@ pipeline {
             sh 'docker build -t aly666/landingmulti:0.0.$BUILD_NUMBER-dev .'
                 }
                 else if (env.BRANCH_NAME == 'staging') {
-            sh 'docker build -t aly666/landingmulti:0.0-$BUILD_NUMBER-staging .'
+            sh 'docker build -t 186253214254.dkr.ecr.ap-southeast-1.amazonaws.com/fb:1.0.$BUILD_NUMBER-stag .'
                 }
                 else if (env.BRANCH_NAME == 'production') {
-            sh 'docker build -t aly666/landingmulti:0.0.$BUILD_NUMBER-prod .'   
+            sh 'docker build -t 186253214254.dkr.ecr.ap-southeast-1.amazonaws.com/fb:1.0.$BUILD_NUMBER-prod .'   
                }
                 else {
                     sh 'echo Nothing to Build'
@@ -29,10 +29,10 @@ pipeline {
             sh 'docker push aly666/landingmulti:0.0.$BUILD_NUMBER-dev'
                 }
                 else if (env.BRANCH_NAME == 'staging') {
-            sh 'docker push aly666/landingmulti:0.0.$BUILD_NUMBER-staging' 
+            sh 'docker push 186253214254.dkr.ecr.ap-southeast-1.amazonaws.com/fb:1.0.$BUILD_NUMBER-stag' 
                 }
                 else if (env.BRANCH_NAME == 'production') {
-            sh 'docker push aly666/landingmulti:0.0.$BUILD_NUMBER-prod'
+            sh 'docker push 186253214254.dkr.ecr.ap-southeast-1.amazonaws.com/fb:1.0.$BUILD_NUMBER-prod'
                }
                 else {
                     sh 'echo Nothing to Build'
